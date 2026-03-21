@@ -23,13 +23,7 @@ A modern Learning Management System built with React and TypeScript.
 
 ## Getting Started
 
-### Installation
-
 ```bash
-# Clone the repository
-git clone https://github.com/[username]/lms.git
-cd lms
-
 # Install dependencies
 npm install
 
@@ -41,6 +35,8 @@ npm start
 ```
 
 The app will open at [http://localhost:3000](http://localhost:3000)
+
+For detailed setup instructions, see [TEAM_ONBOARDING.md](TEAM_ONBOARDING.md)
 
 ## Available Scripts
 

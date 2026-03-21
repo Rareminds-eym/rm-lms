@@ -86,12 +86,12 @@ echo ""
 echo "📚 Checking documentation..."
 docs=(
     "README.md"
+    "TEAM_ONBOARDING.md"
     "CONTRIBUTING.md"
     "CODE_OF_CONDUCT.md"
     "SECURITY.md"
     "CHANGELOG.md"
     "LICENSE"
-    "QUICK_START.md"
 )
 
 for doc in "${docs[@]}"; do
@@ -196,5 +196,5 @@ echo "Next steps:"
 echo "  1. Run: npm install (if not done)"
 echo "  2. Run: npm run validate"
 echo "  3. Test git hooks: git commit -m 'test: verify hooks'"
-echo "  4. Read: QUICK_START.md"
+echo "  4. Read: TEAM_ONBOARDING.md"
 echo ""

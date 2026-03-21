@@ -25,7 +25,7 @@
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky",
-    "lint": "npm-run-all lint:*",
+    "lint": "npm-run-all lint:js lint:css",
     "lint:js": "eslint src --ext .ts,.tsx,.js,.jsx",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:fix": "npm-run-all lint:fix:*",
