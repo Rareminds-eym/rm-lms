@@ -1,11 +1,13 @@
+import { ErrorBoundary } from '@/components/ErrorBoundary/ErrorBoundary';
+import { AppRouter } from '@/Router';
+import '@/env'; // Fails fast if env vars are missing
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>LMS</h1>
-      <p>Start building your application.</p>
-    </div>
+    <ErrorBoundary>
+      <AppRouter />
+    </ErrorBoundary>
   );
 }
 

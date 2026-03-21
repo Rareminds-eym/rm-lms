@@ -17,7 +17,7 @@ services:
 
   # Development service
   dev:
-    image: node:18-alpine
+    image: node:20-alpine
     working_dir: /app
     volumes:
       - .:/app
