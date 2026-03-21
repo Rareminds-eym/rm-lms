@@ -4,14 +4,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "web-vitals": "^2.1.4"
+    "react-dom": "^19.2.4"
   },
   "scripts": {
     "dev": "vite",
@@ -24,10 +18,10 @@
     "test:coverage": "vitest run --coverage",
     "prepare": "husky",
     "lint": "npm-run-all lint:js lint:css",
-    "lint:js": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:js": "eslint src",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:fix": "npm-run-all lint:fix:*",
-    "lint:fix:js": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "lint:fix:js": "eslint src --fix",
     "lint:fix:css": "stylelint \"src/**/*.css\" --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
@@ -41,42 +35,31 @@
     "docker:prod": "docker-compose up app",
     "verify": "bash scripts/verify-setup.sh"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.27.0",
     "@secretlint/quick-start": "^11.4.0",
     "@secretlint/secretlint-rule-preset-recommend": "^11.4.0",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20.19.37",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.57.1",
     "@typescript-eslint/parser": "^8.57.1",
-    "@vitejs/plugin-react": "^6.0.1",
     "@vitejs/plugin-react-swc": "^4.3.0",
     "@vitest/coverage-v8": "^4.1.0",
     "@vitest/ui": "^4.1.0",
-    "cross-env": "^10.1.0",
-    "eslint": "^10.1.0",
+    "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
@@ -84,16 +67,13 @@
     "jsdom": "^29.0.1",
     "lint-staged": "^16.4.0",
     "npm-run-all": "^4.1.5",
-    "postcss-selector-parser": "^7.1.1",
     "prettier": "^3.8.1",
     "stylelint": "^17.5.0",
-    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.1",
     "vite": "^8.0.1",
     "vite-plugin-svgr": "^4.5.0",
-    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.0"
   }
 }

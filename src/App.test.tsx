@@ -3,9 +3,9 @@ import { describe, it, expect } from 'vitest';
 import App from './App';
 
 describe('App', () => {
-  it('renders learn react link', () => {
+  it('renders the heading', () => {
     render(<App />);
-    const linkElement = screen.getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
+    const heading = screen.getByRole('heading', { name: /lms/i });
+    expect(heading).toBeInTheDocument();
   });
 });
