@@ -21,13 +21,26 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test:ci": "cross-env CI=true react-scripts test --coverage --watchAll=false",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "prepare": "husky",
+    "lint": "npm-run-all lint:*",
+    "lint:js": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:fix": "npm-run-all lint:fix:*",
+    "lint:fix:js": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "lint:fix:css": "stylelint \"src/**/*.css\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "type-check": "tsc --noEmit",
+    "validate": "npm-run-all type-check lint format:check test:ci build",
+    "clean": "rm -rf build node_modules/.cache",
+    "docker:build": "docker build -t lms:latest .",
+    "docker:run": "docker run -p 3000:80 lms:latest",
+    "docker:dev": "docker-compose up dev",
+    "docker:prod": "docker-compose up app",
+    "verify": "bash scripts/verify-setup.sh"
   },
   "browserslist": {
     "production": [
@@ -40,5 +53,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "cross-env": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.8.1",
+    "stylelint": "^17.5.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^40.0.0"
   }
 }

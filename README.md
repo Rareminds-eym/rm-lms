@@ -1,46 +1,163 @@
-# Getting Started with Create React App
+# LMS - Learning Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![CI](https://github.com/[username]/lms/workflows/CI/badge.svg)](https://github.com/[username]/lms/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A modern Learning Management System built with React and TypeScript.
+
+## Features
+
+- ⚡ React 19 with TypeScript
+- 🎨 Modern UI with CSS
+- 🧪 Testing with Jest and React Testing Library
+- 📦 Production-ready build configuration
+- 🔍 ESLint + Prettier + Stylelint for code quality
+- 🐶 Husky for Git hooks
+- 📝 Conventional commits with Commitlint
+- 🚀 CI/CD with GitHub Actions
+
+## Prerequisites
+
+- Node.js >= 16.0.0
+- npm >= 8.0.0
+
+## Getting Started
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/[username]/lms.git
+cd lms
+
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env.local
+
+# Start development server
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
 
 ## Available Scripts
 
-In the project directory, you can run:
+### Development
 
-### `npm start`
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm test` - Run tests in watch mode
+- `npm run test:ci` - Run tests once with coverage
+- `npm run test:coverage` - Generate coverage report
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Code Quality
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- `npm run lint` - Lint all code (JS/TS + CSS)
+- `npm run lint:fix` - Auto-fix linting issues
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run type-check` - Run TypeScript type checking
 
-### `npm test`
+### Utilities
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `npm run validate` - Run all checks (type-check, lint, format, test, build)
+- `npm run clean` - Clean build artifacts and cache
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+lms/
+├── .github/              # GitHub configuration
+│   ├── workflows/        # CI/CD workflows
+│   └── ISSUE_TEMPLATE/   # Issue templates
+├── .husky/               # Git hooks
+├── .vscode/              # VS Code settings
+├── public/               # Static files
+├── src/                  # Source code
+│   ├── App.tsx           # Main app component
+│   ├── index.tsx         # Entry point
+│   └── ...
+├── .editorconfig         # Editor configuration
+├── .eslintrc.json        # ESLint configuration
+├── .prettierrc           # Prettier configuration
+├── .stylelintrc.json     # Stylelint configuration
+├── commitlint.config.js  # Commitlint configuration
+├── tsconfig.json         # TypeScript configuration
+└── package.json          # Dependencies and scripts
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Code Quality Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project uses industry-standard tools to maintain code quality:
 
-### `npm run eject`
+- **ESLint** - JavaScript/TypeScript linting
+- **Prettier** - Code formatting
+- **Stylelint** - CSS linting
+- **TypeScript** - Static type checking
+- **Husky** - Git hooks automation
+- **lint-staged** - Run linters on staged files
+- **Commitlint** - Enforce conventional commits
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Git Hooks
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **pre-commit**: Runs lint-staged (lints and formats staged files)
+- **commit-msg**: Validates commit message format
+- **pre-push**: Runs type-check, lint, and build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Commit Message Format
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+type(scope): subject
+
+feat: add user authentication
+fix: resolve navigation bug
+docs: update README
+style: format code
+refactor: restructure components
+test: add unit tests
+chore: update dependencies
+```
+
+## Testing
+
+```bash
+# Run tests in watch mode
+npm test
+
+# Run tests once with coverage
+npm run test:coverage
+
+# Run tests in CI mode
+npm run test:ci
+```
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+The optimized build will be in the `build/` folder.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for information on reporting security vulnerabilities.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React Documentation](https://react.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+- [Create React App Documentation](https://create-react-app.dev/)
+- [Testing Library Documentation](https://testing-library.com/)

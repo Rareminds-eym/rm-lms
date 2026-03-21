@@ -1,0 +1,22 @@
+# Code Owners
+# These owners will be the default owners for everything in the repo
+# Unless a later match takes precedence, they will be requested for
+# review when someone opens a pull request.
+
+# Default owners
+* @[your-username]
+
+# Documentation
+*.md @[your-username]
+/docs/ @[your-username]
+
+# Configuration files
+*.json @[your-username]
+*.yml @[your-username]
+*.yaml @[your-username]
+
+# CI/CD
+/.github/ @[your-username]
+
+# Source code
+/src/ @[your-username]
