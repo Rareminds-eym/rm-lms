@@ -15,9 +15,9 @@ This document describes the architecture and design decisions for the LMS (Learn
 
 ### Build Tools
 
-- **Create React App** - Build configuration
-- **Webpack** - Module bundler (via CRA)
-- **Babel** - JavaScript compiler (via CRA)
+- **Vite** - Build tool and dev server
+- **Rollup** - Production bundler (via Vite)
+- **esbuild** - Fast TypeScript/JSX transpiler (via Vite)
 
 ### Code Quality
 
@@ -57,8 +57,7 @@ lms/
 │   ├── ARCHITECTURE.md  # This file
 │   └── DEPLOYMENT.md    # Deployment guide
 ├── public/              # Static assets
-│   ├── index.html       # HTML template
-│   └── ...
+├── index.html           # HTML entry point (root level for Vite)
 ├── src/                 # Source code
 │   ├── components/      # React components
 │   ├── hooks/           # Custom hooks
@@ -67,12 +66,12 @@ lms/
 │   ├── App.tsx          # Main app component
 │   └── index.tsx        # Entry point
 ├── .editorconfig        # Editor configuration
-├── .eslintrc.json       # ESLint configuration
+├── eslint.config.js     # ESLint configuration (flat config)
 ├── .prettierrc          # Prettier configuration
 ├── .stylelintrc.json    # Stylelint configuration
 ├── commitlint.config.js # Commitlint configuration
 ├── tsconfig.json        # TypeScript configuration
-├── jest.config.js       # Jest configuration
+├── vite.config.ts       # Vite + Vitest configuration
 ├── Dockerfile           # Docker configuration
 ├── docker-compose.yml   # Docker Compose configuration
 ├── nginx.conf           # Nginx configuration
@@ -234,7 +233,8 @@ try {
 
 - Never commit secrets
 - Use `.env.local` for local development
-- Prefix with `REACT_APP_`
+- Prefix with `VITE_` (e.g., `VITE_API_URL`)
+- Access via `import.meta.env.VITE_*` in code
 
 ### Dependencies
 

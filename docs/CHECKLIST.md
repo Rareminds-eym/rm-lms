@@ -4,7 +4,7 @@ Use this checklist to ensure your project is properly configured.
 
 ## Initial Setup
 
-- [x] Node.js and npm installed (>= 16.0.0)
+- [x] Node.js and npm installed (>= 18.0.0)
 - [x] Dependencies installed (`npm install`)
 - [x] Git repository initialized
 - [ ] Remote repository configured
@@ -15,6 +15,7 @@ Use this checklist to ensure your project is properly configured.
 - [x] ESLint configured
 - [x] Prettier configured
 - [x] Stylelint configured
+- [x] Secretlint configured
 - [x] TypeScript configured
 - [x] EditorConfig configured
 - [x] Git hooks (Husky) configured
@@ -23,7 +24,7 @@ Use this checklist to ensure your project is properly configured.
 
 ## Testing
 
-- [x] Jest configured
+- [x] Vitest configured
 - [x] React Testing Library set up
 - [x] Test coverage thresholds set (70%)
 - [ ] Tests written for components
@@ -86,6 +87,7 @@ Use this checklist to ensure your project is properly configured.
 - [x] Linting scripts (`lint`, `lint:fix`)
 - [x] Formatting scripts (`format`, `format:check`)
 - [x] Type checking script (`type-check`)
+- [x] Security scanning script (`secretlint`)
 - [x] Validation script (`validate`)
 - [x] Docker scripts (`docker:build`, `docker:run`)
 
