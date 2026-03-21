@@ -55,10 +55,11 @@ For detailed setup instructions, see [TEAM_ONBOARDING.md](TEAM_ONBOARDING.md)
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check code formatting
 - `npm run type-check` - Run TypeScript type checking
+- `npm run secretlint` - Check for secrets/credentials in code
 
 ### Utilities
 
-- `npm run validate` - Run all checks (type-check, lint, format, test, build)
+- `npm run validate` - Run all checks (type-check, lint, format, secretlint, test, build)
 - `npm run clean` - Clean build artifacts and cache
 
 ## Project Structure
@@ -91,6 +92,7 @@ This project uses industry-standard tools to maintain code quality:
 - **ESLint** - JavaScript/TypeScript linting
 - **Prettier** - Code formatting
 - **Stylelint** - CSS linting
+- **Secretlint** - Secret/credential detection
 - **TypeScript** - Static type checking
 - **Husky** - Git hooks automation
 - **lint-staged** - Run linters on staged files
@@ -98,7 +100,7 @@ This project uses industry-standard tools to maintain code quality:
 
 ### Git Hooks
 
-- **pre-commit**: Runs lint-staged (lints and formats staged files)
+- **pre-commit**: Runs lint-staged (lints, formats, and checks for secrets in staged files)
 - **commit-msg**: Validates commit message format
 - **pre-push**: Runs type-check, lint, and build
 

@@ -34,7 +34,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
-    "validate": "npm-run-all type-check lint format:check test:ci build",
+    "secretlint": "secretlint \"**/*\"",
+    "validate": "npm-run-all type-check lint format:check secretlint test:ci build",
     "clean": "rm -rf build node_modules/.cache",
     "docker:build": "docker build -t lms:latest .",
     "docker:run": "docker run -p 3000:80 lms:latest",
@@ -61,6 +62,8 @@
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
+    "@secretlint/quick-start": "^11.4.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^11.4.0",
     "@testing-library/react-hooks": "^8.0.1",
     "cross-env": "^10.1.0",
     "eslint-config-prettier": "^10.1.8",

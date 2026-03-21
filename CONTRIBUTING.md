@@ -77,7 +77,7 @@ This project uses industry-standard tools to maintain code quality:
 npm run validate
 ```
 
-This runs type-check, lint, format-check, tests, and build.
+This runs type-check, lint, format-check, secret detection, tests, and build.
 
 ## Git Workflow
 
