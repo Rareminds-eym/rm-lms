@@ -69,6 +69,8 @@ jobs:
         if: matrix.node-version == '20.x'
         uses: codecov/codecov-action@v5
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: Rareminds-eym/rm-lms
           files: ./coverage/lcov.info
           flags: unittests
           name: codecov-umbrella
