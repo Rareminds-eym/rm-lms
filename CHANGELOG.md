@@ -42,8 +42,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 - Basic React application structure
-- Testing setup with Jest and React Testing Library
-- Build configuration with Create React App
+- Testing setup with Vitest and React Testing Library
+- Build configuration with Vite
 
 ---
 

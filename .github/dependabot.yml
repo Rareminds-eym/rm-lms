@@ -7,10 +7,10 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 10
-    reviewers:
-      - "[your-username]"
-    assignees:
-      - "[your-username]"
+    # reviewers:
+    #   - "your-github-username"
+    # assignees:
+    #   - "your-github-username"
     commit-message:
       prefix: "chore"
       include: "scope"

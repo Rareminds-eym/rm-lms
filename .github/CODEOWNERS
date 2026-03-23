@@ -3,20 +3,19 @@
 # Unless a later match takes precedence, they will be requested for
 # review when someone opens a pull request.
 
-# Default owners
-* @[your-username]
+# Default owners — update with your actual GitHub username(s)
+# * @your-github-username
 
 # Documentation
-*.md @[your-username]
-/docs/ @[your-username]
+# *.md @your-github-username
+# /docs/ @your-github-username
 
 # Configuration files
-*.json @[your-username]
-*.yml @[your-username]
-*.yaml @[your-username]
+# *.json @your-github-username
+# *.yml @your-github-username
 
 # CI/CD
-/.github/ @[your-username]
+# /.github/ @your-github-username
 
 # Source code
-/src/ @[your-username]
+# /src/ @your-github-username

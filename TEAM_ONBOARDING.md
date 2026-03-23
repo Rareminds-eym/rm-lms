@@ -6,8 +6,8 @@ Welcome to the LMS project! This guide will help you get set up and productive q
 
 ### Prerequisites
 
-- Node.js >= 16.0.0 ([Download](https://nodejs.org/))
-- npm >= 8.0.0 (comes with Node.js)
+- Node.js >= 18.0.0 ([Download](https://nodejs.org/))
+- npm >= 9.0.0 (comes with Node.js)
 - Git ([Download](https://git-scm.com/))
 - VS Code (recommended) ([Download](https://code.visualstudio.com/))
 
@@ -282,7 +282,8 @@ All code must pass:
 
 - Never commit secrets or API keys
 - Use `.env.local` for local secrets
-- All environment variables must start with `REACT_APP_`
+- All environment variables must start with `VITE_` (e.g., `VITE_API_URL`)
+- Secretlint automatically checks for exposed secrets on commit
 - Review security alerts in GitHub
 
 ## 🤝 Getting Help
@@ -303,7 +304,7 @@ All code must pass:
 ### Testing
 
 - [React Testing Library](https://testing-library.com/react)
-- [Jest Documentation](https://jestjs.io/)
+- [Vitest Documentation](https://vitest.dev/)
 
 ### Tools
 
