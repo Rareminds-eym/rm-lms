@@ -7,10 +7,12 @@ import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import boundaries from 'eslint-plugin-boundaries';
 
-export default tseslint.config(
+export default [
   { ignores: ['dist', 'build', 'node_modules', 'coverage', '*.config.js'] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  prettierConfig,
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -48,15 +50,29 @@ export default tseslint.config(
         {
           default: 'disallow',
           rules: [
-            { from: ['app'], allow: ['pages', 'widgets', 'features', 'entities', 'shared'] },
-            { from: ['pages'], allow: ['widgets', 'features', 'entities', 'shared'] },
-            { from: ['widgets'], allow: ['features', 'entities', 'shared'] },
-            { from: ['features'], allow: ['entities', 'shared'] },
-            { from: ['entities'], allow: ['shared'] },
-            { from: ['shared'], allow: [] },
+            {
+              from: { type: 'app' },
+              allow: { to: { type: ['pages', 'widgets', 'features', 'entities', 'shared'] } },
+            },
+            {
+              from: { type: 'pages' },
+              allow: { to: { type: ['widgets', 'features', 'entities', 'shared'] } },
+            },
+            {
+              from: { type: 'widgets' },
+              allow: { to: { type: ['features', 'entities', 'shared'] } },
+            },
+            {
+              from: { type: 'features' },
+              allow: { to: { type: ['entities', 'shared'] } },
+            },
+            {
+              from: { type: 'entities' },
+              allow: { to: { type: 'shared' } },
+            },
           ],
         },
       ],
     },
-  }
-);
+  },
+];
