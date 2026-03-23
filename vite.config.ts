@@ -32,7 +32,7 @@ export default defineConfig({
         'node_modules/',
         'src/setupTests.ts',
         '**/*.d.ts',
-        'src/env.ts',
+        'src/shared/config/env.ts',
         'src/index.tsx',
         '**/*.css',
         '**/*.svg',
