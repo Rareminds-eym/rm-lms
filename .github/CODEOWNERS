@@ -15,6 +15,7 @@ package-lock.json @rareminds-git @gokulrajr-r
 .stylelintrc.json @rareminds-git @gokulrajr-r
 commitlint.config.js @rareminds-git @gokulrajr-r
 .lintstagedrc.json @rareminds-git @gokulrajr-r
+codecov.yml @rareminds-git @gokulrajr-r
 
 # Ignore files - prevent excluding files from quality checks
 .gitignore @rareminds-git @gokulrajr-r

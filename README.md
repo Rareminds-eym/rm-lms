@@ -1,6 +1,7 @@
 # LMS - Learning Management System
 
-[![CI](https://github.com/[username]/lms/workflows/CI/badge.svg)](https://github.com/[username]/lms/actions)
+[![CI](https://github.com/Rareminds-eym/rm-lms/workflows/CI/badge.svg)](https://github.com/Rareminds-eym/rm-lms/actions)
+[![codecov](https://codecov.io/gh/Rareminds-eym/rm-lms/branch/main/graph/badge.svg)](https://codecov.io/gh/Rareminds-eym/rm-lms)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern Learning Management System built with React and TypeScript.
