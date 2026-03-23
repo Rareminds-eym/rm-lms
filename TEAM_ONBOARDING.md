@@ -185,8 +185,40 @@ npm run test:ci
 
 - **Team Onboarding**: [TEAM_ONBOARDING.md](TEAM_ONBOARDING.md) - Start here!
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Configuration Protection**: [docs/CONFIGURATION_PROTECTION.md](docs/CONFIGURATION_PROTECTION.md) - **IMPORTANT**
+- **Setup Protection**: [SETUP_PROTECTION.md](SETUP_PROTECTION.md) - For tech leads
 - **Architecture**: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - **Deployment**: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+
+## ⚠️ Configuration Files - READ THIS
+
+**IMPORTANT**: This project has protected configuration files that require tech lead approval to modify.
+
+### Protected Files Include:
+
+- `eslint.config.js`, `tsconfig.json`, `vite.config.ts`
+- `package.json`, `package-lock.json`
+- All linting/formatting configs
+- Git hooks (`.husky/`)
+- CI/CD workflows (`.github/workflows/`)
+- Docker configs
+- Ignore files (`.gitignore`, `.prettierignore`, etc.)
+
+### Why Are They Protected?
+
+- Maintain code quality standards
+- Enforce FSD architecture boundaries
+- Prevent bypassing CI/CD checks
+- Ensure consistent development environment
+
+### If You Need to Modify Config Files:
+
+1. **Discuss with tech leads first**
+2. Create a PR (code owners will be auto-requested)
+3. Explain the reason in PR description
+4. Wait for approval before merging
+
+**See [docs/CONFIGURATION_PROTECTION.md](docs/CONFIGURATION_PROTECTION.md) for complete details.**
 
 ## 🔧 VS Code Setup
 
@@ -322,9 +354,11 @@ All code must pass:
 - [ ] Install VS Code extensions
 - [ ] Run `npm start` successfully
 - [ ] Make a test commit
+- [ ] **Read [docs/CONFIGURATION_PROTECTION.md](docs/CONFIGURATION_PROTECTION.md)** - IMPORTANT
+- [ ] Understand which files are protected
 - [ ] Read CONTRIBUTING.md
 - [ ] Join team communication channels
-- [ ] Review project architecture
+- [ ] Review project architecture (FSD)
 - [ ] Set up GitHub notifications
 
 ## 🎯 First Tasks

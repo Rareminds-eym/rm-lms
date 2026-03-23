@@ -68,22 +68,47 @@ For detailed setup instructions, see [TEAM_ONBOARDING.md](TEAM_ONBOARDING.md)
 lms/
 ├── .github/              # GitHub configuration
 │   ├── workflows/        # CI/CD workflows
+│   ├── CODEOWNERS        # Code ownership rules (PROTECTED)
 │   └── ISSUE_TEMPLATE/   # Issue templates
-├── .husky/               # Git hooks
+├── .husky/               # Git hooks (PROTECTED)
 ├── .vscode/              # VS Code settings
+├── docs/                 # Documentation
+│   └── CONFIGURATION_PROTECTION.md  # Config protection guide
 ├── public/               # Static files
-├── src/                  # Source code
-│   ├── App.tsx           # Main app component
-│   ├── index.tsx         # Entry point
-│   └── ...
-├── .editorconfig         # Editor configuration
-├── eslint.config.js      # ESLint configuration
-├── .prettierrc           # Prettier configuration
-├── .stylelintrc.json     # Stylelint configuration
-├── commitlint.config.js  # Commitlint configuration
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Dependencies and scripts
+├── src/                  # Source code (FSD architecture)
+│   ├── app/              # Application layer
+│   ├── pages/            # Pages layer
+│   ├── widgets/          # Widgets layer
+│   ├── features/         # Features layer
+│   ├── entities/         # Entities layer
+│   ├── shared/           # Shared layer
+│   └── index.tsx         # Entry point
+├── eslint.config.js      # ESLint configuration (PROTECTED)
+├── tsconfig.json         # TypeScript configuration (PROTECTED)
+├── vite.config.ts        # Vite configuration (PROTECTED)
+└── package.json          # Dependencies and scripts (PROTECTED)
 ```
+
+**Note**: Files marked (PROTECTED) require code owner approval to modify. See [Configuration Protection Guide](docs/CONFIGURATION_PROTECTION.md).
+
+## Architecture
+
+This project follows **Feature-Sliced Design (FSD)** methodology with strict layer boundaries enforced by ESLint:
+
+- **app** - Application initialization, providers, global styles
+- **pages** - Route pages and page compositions
+- **widgets** - Large composite UI blocks
+- **features** - User interactions and business features
+- **entities** - Business entities and their logic
+- **shared** - Reusable utilities, UI kit, API clients
+
+**Import rules** (enforced by ESLint):
+
+- Higher layers can import from lower layers only
+- Lower layers cannot import from higher layers
+- Violations will fail CI/CD
+
+Learn more: [Feature-Sliced Design](https://feature-sliced.design/)
 
 ## Code Quality Tools
 
@@ -144,6 +169,20 @@ The optimized build will be in the `build/` folder.
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+**Important**: Changes to configuration files (ESLint, TypeScript, package.json, etc.) require approval from code owners. See [Configuration Protection Guide](docs/CONFIGURATION_PROTECTION.md) for details.
+
+## Configuration Protection
+
+This project has multiple layers of protection to ensure code quality and architectural standards:
+
+1. **CODEOWNERS** - Requires tech lead approval for config changes
+2. **Branch Protection** - Enforces reviews and CI checks
+3. **Git Hooks** - Local validation and warnings
+4. **CI/CD** - Server-side validation (cannot be bypassed)
+5. **ESLint Boundaries** - Enforces FSD architecture
+
+See [Configuration Protection Guide](docs/CONFIGURATION_PROTECTION.md) for complete details.
 
 ## Security
 
