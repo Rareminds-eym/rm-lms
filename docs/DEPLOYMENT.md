@@ -13,8 +13,8 @@ This guide covers various deployment options for the LMS application.
 
 ## Prerequisites
 
-- Node.js >= 16.0.0
-- npm >= 8.0.0
+- Node.js >= 18.0.0
+- npm >= 9.0.0
 - Docker (for containerized deployment)
 
 ## Environment Variables
@@ -22,9 +22,9 @@ This guide covers various deployment options for the LMS application.
 Create a `.env.production` file with your production environment variables:
 
 ```bash
-REACT_APP_API_URL=https://api.yourdomain.com
-REACT_APP_ENABLE_ANALYTICS=true
-REACT_APP_GOOGLE_ANALYTICS_ID=UA-XXXXXXXXX-X
+VITE_API_URL=https://api.yourdomain.com
+VITE_ENABLE_ANALYTICS=true
+VITE_GOOGLE_ANALYTICS_ID=UA-XXXXXXXXX-X
 ```
 
 See `.env.example` for all available variables.
@@ -144,10 +144,10 @@ aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID --paths "/*"
 }
 ```
 
-2. Add buildpack:
+2. Add Node.js buildpack:
 
 ```bash
-heroku buildpacks:set mars/create-react-app
+heroku buildpacks:set heroku/nodejs
 ```
 
 3. Deploy:
@@ -339,7 +339,7 @@ npm run docker:build
 
 ### Environment Variables Not Working
 
-Ensure variables are prefixed with `REACT_APP_` and rebuild the application.
+Ensure variables are prefixed with `VITE_` and rebuild the application. Access them in code using `import.meta.env.VITE_*`.
 
 ## Support
 

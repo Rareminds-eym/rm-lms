@@ -9,8 +9,8 @@ A modern Learning Management System built with React and TypeScript.
 
 - ⚡ React 19 with TypeScript
 - 🎨 Modern UI with CSS
-- 🧪 Testing with Jest and React Testing Library
-- 📦 Production-ready build configuration
+- 🧪 Testing with Vitest and React Testing Library
+- 📦 Production-ready build configuration with Vite
 - 🔍 ESLint + Prettier + Stylelint for code quality
 - 🐶 Husky for Git hooks
 - 📝 Conventional commits with Commitlint
@@ -18,8 +18,8 @@ A modern Learning Management System built with React and TypeScript.
 
 ## Prerequisites
 
-- Node.js >= 16.0.0
-- npm >= 8.0.0
+- Node.js >= 18.0.0
+- npm >= 9.0.0
 
 ## Getting Started
 
@@ -77,7 +77,7 @@ lms/
 │   ├── index.tsx         # Entry point
 │   └── ...
 ├── .editorconfig         # Editor configuration
-├── .eslintrc.json        # ESLint configuration
+├── eslint.config.js      # ESLint configuration
 ├── .prettierrc           # Prettier configuration
 ├── .stylelintrc.json     # Stylelint configuration
 ├── commitlint.config.js  # Commitlint configuration
@@ -157,5 +157,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [React Documentation](https://react.dev/)
 - [TypeScript Documentation](https://www.typescriptlang.org/)
-- [Create React App Documentation](https://create-react-app.dev/)
+- [Vite Documentation](https://vitejs.dev/)
+- [Vitest Documentation](https://vitest.dev/)
 - [Testing Library Documentation](https://testing-library.com/)
